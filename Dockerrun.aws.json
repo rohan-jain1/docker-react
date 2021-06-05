@@ -1,13 +1,17 @@
 {
-    "AWSEBDockerrunVersion": "1",
-    "Image": {
-      "Name": "rjai/docker-react",
-      "Update": "true"
-    },
-    "Ports": [
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
       {
-        "ContainerPort": "80",
-        "HostPort": "80"
+        "name": "docker-react",
+        "image": "rjai/docker-react:latest",
+        "essential": true,
+        "memory": 512,
+        "portMappings": [
+          {
+            "hostPort": 80,
+            "containerPort": 80
+          }
+        ]
       }
     ]
   }
